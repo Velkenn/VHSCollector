@@ -8,18 +8,44 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var vhs : [VHS] = []
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+        vhs = try context.fetch(VHS.fetchRequest())
+            tableView.reloadData()
+        }catch {
+            
+        }
     }
-
-
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vhs.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        let vhs = self.vhs[indexPath.row]
+        cell.textLabel?.text = vhs.title
+        cell.imageView?.image = UIImage(data: vhs.image as! Data)
+        return cell
+    
+    }
 }
 

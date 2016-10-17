@@ -1,14 +1,75 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lI9-sf-dIt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="0ga-hs-4IE">
+            <objects>
+                <viewController id="wDi-cP-yxZ" customClass="VHSViewController" customModule="VHSCollector" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R8W-6c-ZCn"/>
+                        <viewControllerLayoutGuide type="bottom" id="IFH-9w-mqI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mcP-MV-cXP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ChildsPlayCover.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RcU-Ir-m4R">
+                                <frame key="frameInset" minX="67" minY="86" width="240" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of film" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fox-gV-oWu">
+                                <frame key="frameInset" minX="67" minY="282" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzR-uf-T15">
+                                <frame key="frameInset" minX="159" minY="334" width="56" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addVHS:" destination="wDi-cP-yxZ" eventType="touchUpInside" id="NLd-dP-Ikm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Brn-jW-SD6">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="QwD-Bz-g96">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="wDi-cP-yxZ" id="LDY-ZS-sKw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="2oi-lx-Rcp">
+                                <connections>
+                                    <action selector="photosTapped:" destination="wDi-cP-yxZ" id="nnD-kG-Kq7"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="titleTextField" destination="fox-gV-oWu" id="5wU-pS-ddk"/>
+                        <outlet property="vhsImageView" destination="RcU-Ir-m4R" id="6kE-Vv-gcs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UjG-YY-T2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="123.68815592203899"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="VHSCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +77,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vHN-WK-JsG">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vHN-WK-JsG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="5zT-uC-dEW"/>
+                            <constraint firstItem="vHN-WK-JsG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ncs-aT-cVx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vHN-WK-JsG" secondAttribute="bottom" id="h8c-1Z-BQD"/>
+                            <constraint firstItem="vHN-WK-JsG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="i1M-YS-fen"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="g26-EV-a4m">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vGN-p2-esf">
+                            <connections>
+                                <segue destination="wDi-cP-yxZ" kind="show" id="hQN-af-Sod"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="vHN-WK-JsG" id="wtq-Ob-pvM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-6" y="124"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="esn-D9-5ai">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lI9-sf-dIt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wop-R9-QbX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ek4-jq-Sfu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rig-1D-kzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-972" y="124"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ChildsPlayCover.jpg" width="160" height="304"/>
+    </resources>
 </document>

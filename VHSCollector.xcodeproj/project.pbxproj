@@ -13,6 +13,8 @@
 		DC200D191DB4B1A100F74C69 /* VHSCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC200D171DB4B1A100F74C69 /* VHSCollector.xcdatamodeld */; };
 		DC200D1B1DB4B1A100F74C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC200D1A1DB4B1A100F74C69 /* Assets.xcassets */; };
 		DC200D1E1DB4B1A100F74C69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC200D1C1DB4B1A100F74C69 /* LaunchScreen.storyboard */; };
+		DC200D261DB4B84E00F74C69 /* ChildsPlayCover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC200D251DB4B84E00F74C69 /* ChildsPlayCover.jpg */; };
+		DC200D281DB4B99900F74C69 /* VHSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC200D271DB4B99900F74C69 /* VHSViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		DC200D1A1DB4B1A100F74C69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC200D1D1DB4B1A100F74C69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC200D1F1DB4B1A100F74C69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC200D251DB4B84E00F74C69 /* ChildsPlayCover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ChildsPlayCover.jpg; sourceTree = "<group>"; };
+		DC200D271DB4B99900F74C69 /* VHSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHSViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +60,11 @@
 		DC200D0F1DB4B1A100F74C69 /* VHSCollector */ = {
 			isa = PBXGroup;
 			children = (
+				DC200D251DB4B84E00F74C69 /* ChildsPlayCover.jpg */,
 				DC200D101DB4B1A100F74C69 /* AppDelegate.swift */,
 				DC200D121DB4B1A100F74C69 /* ViewController.swift */,
 				DC200D141DB4B1A100F74C69 /* Main.storyboard */,
+				DC200D271DB4B99900F74C69 /* VHSViewController.swift */,
 				DC200D1A1DB4B1A100F74C69 /* Assets.xcassets */,
 				DC200D1C1DB4B1A100F74C69 /* LaunchScreen.storyboard */,
 				DC200D1F1DB4B1A100F74C69 /* Info.plist */,
@@ -128,6 +134,7 @@
 			files = (
 				DC200D1E1DB4B1A100F74C69 /* LaunchScreen.storyboard in Resources */,
 				DC200D1B1DB4B1A100F74C69 /* Assets.xcassets in Resources */,
+				DC200D261DB4B84E00F74C69 /* ChildsPlayCover.jpg in Resources */,
 				DC200D161DB4B1A100F74C69 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +148,7 @@
 			files = (
 				DC200D191DB4B1A100F74C69 /* VHSCollector.xcdatamodeld in Sources */,
 				DC200D131DB4B1A100F74C69 /* ViewController.swift in Sources */,
+				DC200D281DB4B99900F74C69 /* VHSViewController.swift in Sources */,
 				DC200D111DB4B1A100F74C69 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
