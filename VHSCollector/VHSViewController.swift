@@ -13,23 +13,38 @@ class VHSViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet weak var vhsImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     
+    @IBOutlet weak var addUpdate: UIButton!
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
     
     var imagePicker = UIImagePickerController()
-    
+    var vhs : VHS? = nil
     
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         
         imagePicker.delegate = self
+        
+        if vhs != nil {
+            vhsImageView.image = UIImage(data: vhs!.image as! Data)
+            titleTextField.text = vhs!.title
+            
+        addUpdate.setTitle("Update", for: .normal)
+            
+            
+        }else {
+            deleteButton.isHidden = true
+        }
 
-        // Do any additional setup after loading the view.
+        
     }
    
     @IBAction func photosTapped(_ sender: AnyObject) {
-        
         
         imagePicker.sourceType = .photoLibrary
         
@@ -46,22 +61,41 @@ class VHSViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     
     @IBAction func cameraTapped(_ sender: AnyObject) {
+        
+        imagePicker.sourceType = .camera
+        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func addVHS(_ sender: AnyObject) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let vhs = VHS(context: context)
-        vhs.title = titleTextField.text
-        vhs.image = UIImagePNGRepresentation(vhsImageView.image!) as NSData?
+        if vhs != nil {
+            vhs!.title = titleTextField.text
+            vhs!.image = UIImagePNGRepresentation(vhsImageView.image!) as NSData?
+            }else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let vhs = VHS(context: context)
+            vhs.title = titleTextField.text
+            vhs.image = UIImagePNGRepresentation(vhsImageView.image!) as NSData?
+            
+            
+        }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         navigationController!.popViewController(animated: true)
         
-        
-        
-        
     }
+
+    @IBAction func deleteTapped(_ sender: AnyObject) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        context.delete(vhs!)
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)    }
+
 
 }

@@ -105,6 +105,7 @@
 				TargetAttributes = {
 					DC200D0C1DB4B1A100F74C69 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZTKQL2H46D;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -272,6 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZTKQL2H46D;
 				INFOPLIST_FILE = VHSCollector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stephen.VHSCollector;
@@ -284,6 +286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZTKQL2H46D;
 				INFOPLIST_FILE = VHSCollector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stephen.VHSCollector;
@@ -311,6 +314,7 @@
 				DC200D241DB4B1A100F74C69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

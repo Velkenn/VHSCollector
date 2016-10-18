@@ -32,12 +32,22 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzR-uf-T15">
-                                <frame key="frameInset" minX="159" minY="334" width="56" height="49"/>
+                                <frame key="frameInset" minX="67" minY="334" width="240" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addVHS:" destination="wDi-cP-yxZ" eventType="touchUpInside" id="NLd-dP-Ikm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcq-Gk-uWa">
+                                <frame key="frameInset" minX="67" minY="406" width="240" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addVHS:" destination="wDi-cP-yxZ" eventType="touchUpInside" id="fU3-cn-y3Q"/>
+                                    <action selector="deleteTapped:" destination="wDi-cP-yxZ" eventType="touchUpInside" id="SQv-FZ-KJ7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,6 +68,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdate" destination="MzR-uf-T15" id="gCC-Kr-bKv"/>
+                        <outlet property="deleteButton" destination="Mcq-Gk-uWa" id="nLr-NR-m4P"/>
                         <outlet property="titleTextField" destination="fox-gV-oWu" id="5wU-pS-ddk"/>
                         <outlet property="vhsImageView" destination="RcU-Ir-m4R" id="6kE-Vv-gcs"/>
                     </connections>
@@ -93,7 +105,7 @@
                     <navigationItem key="navigationItem" id="g26-EV-a4m">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vGN-p2-esf">
                             <connections>
-                                <segue destination="wDi-cP-yxZ" kind="show" id="hQN-af-Sod"/>
+                                <segue destination="wDi-cP-yxZ" kind="show" identifier="vhsSegue" id="hQN-af-Sod"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
